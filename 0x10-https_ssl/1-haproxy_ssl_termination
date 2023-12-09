@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+frontend salah_fronend_https
+        bind *:80
+        bind *:443 ssl crt /etc/haproxy/certs/www.sevkir.tech/.pem
+        redirect scheme https code 301 if !{ ssl_fc }
+        default_backend salah_backend
+
+backend salah_backend
+        balance roundrobin
+        server 382165-web-01 100.26.214.3:80 check
+        server 382165-web-02 54.165.188.189:80 check
