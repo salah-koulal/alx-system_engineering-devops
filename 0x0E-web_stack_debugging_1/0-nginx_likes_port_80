@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Script that configures nginx on a container.
-sudo apt-get install nginx
-sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
-sudo service nginx restart
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
