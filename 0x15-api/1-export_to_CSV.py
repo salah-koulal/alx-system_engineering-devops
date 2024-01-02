@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Export to CSV : This script uses the requests module to fetch data from a REST API and exports
+Export to CSV :
+This script uses the requests module to fetch data from a REST API and exports
 an employee's TODO list progress to a CSV file.
 """
 
@@ -17,7 +18,7 @@ if __name__ == "__main__":
     user = requests.get('https://jsonplaceholder.typicode.com/users/{}'
                         .format(user_id)).json()
     todos = requests.get('https://jsonplaceholder.typicode.com/users/{}/todos'
-                        .format(user_id)).json()
+                         .format(user_id)).json()
 
     with open('{}.csv'.format(user_id), 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
