@@ -19,9 +19,7 @@ https://jsonplaceholder.typicode.com/users/{}/todos\
         tasks += 1
 
     print('Employee {} is done with tasks({}/{}):\
-    '.format(person_res.get("name"),
-            done,
-            tasks))
+    '.format(person_res.get("name"), done, tasks))
 
     for i in todo_list:
         if i.get("completed"):
